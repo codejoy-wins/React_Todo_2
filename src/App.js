@@ -17,7 +17,7 @@ class App extends Component {
       },
       {
         id: 2,
-        title: '1000 headshots with the MP7',
+        title: '1001 headshots with the MP7',
         completed: false
       },
       {
