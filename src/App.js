@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import Header from './components/layout/Header';
+import Max from './components/layout/Max';
+
 import Todos from './components/Todos';
 import AddTodo from './components/AddTodo';
 import './App.css';
@@ -62,6 +64,7 @@ class App extends Component {
       <div className="App">
         <div className="container">
           <Header />
+          <Max />
           <AddTodo addTodo={this.addTodo}/>
           <Todos todos={this.state.todos} markComplete ={this.markComplete} delTodo={this.delTodo}/>
         </div>
