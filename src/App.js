@@ -12,12 +12,12 @@ class App extends Component {
     todos: [
       {
         id: 1,
-        title: '1000 headshots with the ACR',
+        title: 'Learn Calculus',
         completed: false
       },
       {
         id: 2,
-        title: '1001 headshots with the MP7',
+        title: 'Speak more French',
         completed: false
       },
       {
