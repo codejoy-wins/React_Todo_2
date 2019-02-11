@@ -1,25 +1,48 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import Todos from './components/Todos';
+// import logo from './logo.svg';
+// import hunter from './hunter.png';
 import './App.css';
 
+// Deletion method starts at 51:24  I'm taking a break
+
 class App extends Component {
+
+  state = {
+    todos: [
+      {
+        id: 1,
+        title: '1000 headshots with the ACR',
+        completed: false
+      },
+      {
+        id: 2,
+        title: '1000 headshots with the MP7',
+        completed: false
+      },
+      {
+        id: 3,
+        title: 'Job as a programmer',
+        completed: false
+      }
+    ]
+  }
+  // Toggle Complete
+  markComplete = (id) => {
+    // go into the state object and for each item in the todos, toggle the completed if it matches the id passed through from todos
+    this.setState({ todos: this.state.todos.map(todo => {
+      if(todo.id === id) {
+        todo.completed = !todo.completed
+      }
+      return todo;
+    })  });
+  }
+
+
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+        <Todos todos={this.state.todos} markComplete ={this.markComplete} />
       </div>
     );
   }
